@@ -1,0 +1,88 @@
+#Task3
+#check if a number is even or odd
+'''num=int(input("enter the number:"))
+if(num%2==0):
+    print("even")
+else:
+    print("odd")'''
+#write a program to check if a number postive,negative if not print zero
+'''num=int(input("enter the number:"))
+if(num>0):
+    print("postive")
+elif(num<0):
+    print("Negative")
+else:
+    print("zero")'''
+#check if the number divisble by both 2and5 and display the result
+'''num=int(input("enter the number:"))
+if num % 2 == 0 and num % 5 == 0:
+    print("divisble by both 2 and 5")
+else:
+    print(" not divisble by both 2 and 5")'''
+#input marks of a student with a 5 grade
+'''marks=int(input("enter the marks:"))
+if(marks<35):
+    print("just pass")
+elif(marks>35 and marks<70):
+    print("average")
+elif(marks>70 and marks<100):
+    print("good marks")
+else:
+    print()'''
+#print number 1 to 10
+'''for i in range(1,11):
+    print(i)'''
+#print number from 1 to 10 and sqaure them
+'''for i in range(1,11):
+    print(i*2)'''
+#print reverse 10 to 1
+'''for i in range(10,0,-1):
+    print(i)'''
+#age category
+'''age=int(input("enter the age:"))
+if(age<12):
+    print("child")
+elif(age>12 and age<19):
+    print("teen")
+elif(age>19 and age<59):
+    print("senior")
+elif(age>59 and age<70):
+    print("old man")
+else:
+    print()'''
+#login system
+'''password=int(input("enter the password"))
+if password==1234:
+    print("password correct")
+else:
+    ("not correct")
+user_name=str(input("enter the user_name:"))
+if user_name==admin:
+    print("correct")
+else:
+    prit("not correct")'''
+#charcter is a vowel or consonant
+'''n=str(input("enter the charcter:"))
+if(n in "a e i o u"):
+    print("it is a vowel")
+else:
+    print("it is a consonant")'''
+#print A to Z
+'''for i in range (65,91):
+    print(chr (i))'''
+#print table
+'''n=int(input("enter the number:"))
+for i in range(1,11):
+    print(i,"*",n,"=",i*n)'''
+#leap year
+'''year=int(input("enter the year:"))
+if(year%400==0)or(year%4==0)and(year%100!=0):
+    print(year,"it is a leap year")
+else:
+    print(year,"not a leap year")'''
+#if it cybe greater than 100 display it above or below or equal to 100
+num=int(input("enter the number:"))
+cube=num**3
+print("cube=",cube)
+if
+
