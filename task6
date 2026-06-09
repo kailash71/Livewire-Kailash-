@@ -1,0 +1,65 @@
+TASK 6
+#Create a lisit of 5 student name
+'''student=["kailash","rohit","milesh","laksayan","alwin"]
+print(student)'''
+#add a new name to the lisit
+'''m=['leo','karrupu','kara','salaar']
+m.append('sirai')
+print(m)'''
+#Remove a student name from the lisit
+'''student=["kailash","rohit","milesh","laksayan","alwin"]
+student.remove('kailash')
+print(student)'''
+#print all element using loop
+'''list=[10,20,30,40,50]
+for i in  list:
+    print(i)'''
+#Find the largest and smallest number in the list
+'''number=[2,50,60,100,40]
+largest=smallest=number[0]
+for i in number:
+    if i>largest:
+        largest=i
+    if i<smallest:
+        smallest=i
+print("largest number:",largest)
+print("smallest number:",smallest)'''
+#reverse a lisit
+'''student=["kailash","rohit","milesh","laksayan","alwin"]
+student.reverse()
+print(student)'''
+#sort a lisit in ascending order
+'''student=["kailash","rohit","milesh","laksayan","alwin"]
+print(student.sort(key=len))
+print(student)'''
+#find sum and average in the lisit in python
+'''number=[10,20,30,40,50]
+if sum==sum(number):
+    print("sum:",total)
+if average=total/len (number):
+    print("average:",average)
+else:
+    print()'''
+#element in the list
+'''number=[10,20,30,40,50,]
+print(number[-3])'''
+
+#
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+even_count = 0
+odd_count = 0
+for num in numbers:
+    if num % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+print("Even numbers:", even_count)
+print("Odd numbers:", odd_count)
+
+
+
+
+
+
+        
+
