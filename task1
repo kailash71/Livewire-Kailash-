@@ -1,0 +1,97 @@
+#BMI calculator formula
+'''w=float(input("enter the weight"))
+h=float(input("enter the height"))
+b=(w/(h/100)**2)
+print(b)'''
+
+
+#Input distance and time calculate speed(S=D/T) #
+'''t=int(input("Enter the time:"))
+d=int(input("Enter the distance:"))
+s=(d/t)
+print(s)'''
+
+#Square the middle digit of the five digit  number
+'''middle_digit=int(input(6))
+a=("square of 6 is ")
+print(a)'''
+
+#Volume of cuboid formula
+'''l=int( input("Enter the length:")) #
+b=int(input("Enter the breath:"))
+h=int(input("Enter the height:"))
+s=(l*b*h)
+print(s)'''
+
+#volume of the cylinder formula  #
+
+'''r=int(input("Enter the radius:"))
+h=int(input("Enter the height:"))
+s=(3.14*r*r*h)
+print(s)'''
+
+#To remove last digit of the number
+'''last_digit=(2,10,10)
+print(last_digit)'''
+
+#convert centimeter to meter
+'''a=int(input("Enter the centimeter:"))#
+c=a/100
+print(c)'''
+
+#Expand the number1234
+
+'''n=int(input())
+a=n//1000
+b=n//100
+c=n//10
+d=n//1
+print'''
+
+# TO find last digit of the number
+'''last_digit=(5678)
+a=(5678)%10
+print(a)'''
+
+#To reomve last digit of the number
+'''last_digit=(1234)
+a=(1234)//10
+print(a)'''
+
+#Square the middle digit of a five digit numbe
+'''middle_digit=int(input("Enter a five digit number:"))
+a=(54623)%1000
+b=(623)//100
+c=6*6
+print("square of 6 is",c)'''
+
+#To find last 2 digit of the given number
+'''Two_digit=(23456)
+a=(23456)%100
+print(a)'''
+
+#Expand the number 1234=1000+200+30+4
+
+n=int(input())
+a=n//1000
+b=(n//100)%10
+c=(n//10)%10
+d=(n%10)
+print("n","=",a*1000,"+",b*100,"+",c*10,"+",d,)
+
+
+            
+            
+
+     
+
+
+
+
+
+
+
+
+
+
+
