@@ -1,0 +1,146 @@
+#write a python to print all even number from 1 to 50 wthiout using arguments
+'''for i in range(0,51,2):
+    print(i)'''
+#Write a Python function that takes two numbers as arguments and prints their sum
+'''def add (a,b):
+    print(a+b)
+add(5,7)'''
+#Write a function that returns multiple values (sum, average,minimum and maximum) from a list
+'''def multiple_values(number):
+    total=sum(number)
+    average=total/len(number)
+    m1=min(number)
+    m2=max(number)
+    return total,average,m1,m2
+nums=[10,20,30,40,50]
+total, avgerage, m1, m2 = multiple_values(number)
+
+print("Sum:", total)
+print("total:", avgerage)
+print("Min:", m1)
+print("Max:", m2)'''
+#Write a Python function to find the largest of three numbers using a return statement.
+'''def largest_number(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+
+result = largest_number(15, 42, 27)
+print("Largest number is:", result)'''
+#Write a function using positional and keyword arguments together to display student details.
+'''def student_details(name, age, course="Python"):
+    print("Student Name:", name)
+    print("Age:", age)
+    print("Course:", course)
+student_details("Arun", age=20, course="java")'''
+#Write a Python function using positional arguments to calculate the area o
+'''def area_rectangle(length, width):
+    area = length * width
+    return area
+result = area_rectangle(10, 5)
+
+print("Area of rectangle:", result)'''
+#Write a Python function with a default argument to calculate simple interest where the default rate is 5%.
+'''def simple_interest(principal, time, rate=5):
+    interest = (principal * rate * time) / 100
+    return interest
+r1 = simple_interest(10000, 2)
+r2 = simple_interest(10000, 2, 8)
+
+print("Simple Interest with default rate:", r1)
+print("Simple Interest with custom rate:", r2)'''
+#8. Write a Python function with a default argument to find the power of a number where the default exponent is 2.
+'''def power(number, exponent=2):
+    return number ** exponent
+result1 = power(5)
+result2 = power(5, 3)
+
+print("Power with default exponent:", result1)
+print("Power with custom exponent:", result2)'''
+#Write a Python function with a default argument to find the power of a number where the default exponent is 2.
+'''def power(base,exponent=2):
+     return base**exponent
+print(power(5))
+print(power(6))'''
+#Write a Python function using '*args' to find the sum of any number of values.
+'''def find_sum(*args):
+    return sum(args)
+print(find_sum(10,20,30,40))
+print(find_sum(1,2,3,4,5,))'''
+#Write a Python function using '**kwargs' to display employee details.
+'''def number(*data):
+    print(data)
+number(10,20,30,40,50)'''
+#13. Write a lambda function to find the square of a number.
+'''sqaure=lambda x:x*x
+print(sqaure(5))'''
+#Write a lambda function to find the larger of two numbers.
+'''larger = lambda a, b:a if a > b else b
+print(larger(10, 20))
+print(larger(50, 15))'''
+#15. Use the 'map()' function to convert a list of temperatures from Celsius to Fahrenheit.
+'''number=[1,2,3,4,5,6]
+result=list(map(lambda x:x*2,number))
+print(result)'''
+#Use the 'map()' function to find the squares of all elements in a list.
+'''number=[1,2,3,4,5,6]
+result=list(map(lambda x:x*2,number))
+print(result)'''
+#Use the 'filter()' function to extract all even numbers from a list.
+'''number=[1,2,3,4,5]
+even=list(filtert(lambda x: x%2==0,number))
+print(even)'''
+# Use the 'filter()' function to extract all numbers greater than 100 from a list.
+'''number=[101,90,40,120,130,200]
+result=list(filter(lambda x:x>100,number))
+print(result)'''
+#Write a recursive function to calculate the power of a number
+'''def function (a):
+    print( a**2)
+b=int(input("enter the number:"))
+function(b)'''
+#Write a recursive function to generate the Fibonacci series up to N terms
+def fibonacci(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        series = fibonacci(n - 1)
+        series.append(series[-1] + series[-2])
+        return series
+N = int(input("Enter the number of terms: "))
+print("Fibonacci Series:")
+print(fibonacci(N))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
