@@ -1,0 +1,23 @@
+#random module 
+'''import random as r 
+a=[10,20,30,40,50] 
+print("random():",r.random()) 
+print("randint():",r.randint(1,1000)) 
+print("randrange():",r.randrange(1,10,5)) 
+print("choice():",r.choice(a)) 
+print("uniform():",r.uniform(1,50)) 
+print("sample():",r.sample(a,2)) 
+r.shuffle(a) 
+print(a)''' 
+#numpy 
+'''import numpy as ny 
+a=np.array([3,4,5,6,7]) 
+print(np.sum(a)) 
+print(np.mean(a))   
+print(np.max(a)) 
+print(np.min(a)) 
+print(np.sort(a))''' 
+#scipy 
+from scipy import stats 
+data=[10,20,20,30,40,40,40] 
+a=stats.mode(data)
