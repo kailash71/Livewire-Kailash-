@@ -1,0 +1,53 @@
+import math as m 
+#1.constant 
+print(m.pi) 
+print(m.e) 
+print(m.tau) 
+print(m.inf) 
+print(m.nan) 
+print() 
+#2.basic functions 
+print(m.sqrt(25)) 
+print(m.pow(2,3)) 
+print(m.fabs(-10)) 
+print(m.factorial(5)) 
+print(m.gcd(12,18)) 
+print(m.lcm(12,18)) 
+print() 
+#3.rounding functions 
+print(m.ceil(4.6)) 
+print(m.floor(4.6)) 
+print(m.trunc(4.5)) 
+print(round(2.3456,2)) 
+print() 
+#4.trignometric function 
+print(m.sin(m.pi/2)) 
+print(m.cos(0)) 
+print(m.tan(m.pi/4)) 
+print(m.asin(1)) 
+print(m.acos(1)) 
+print(m.atan(1)) 
+print() 
+#5.convert btw degree and radian 
+print(m.radians(180)) 
+print(m.degrees(m.pi)) 
+print() 
+#6.logarethimic and exponential function 
+print(m.log(100,10)) 
+print(m.log10(100)) 
+print(m.log2(8)) 
+print(m.exp(2)) 
+print(m.expm1(1)) 
+print() 
+#7.hyperbolic functions 
+print(m.sinh(1)) 
+print(m.cosh(1)) 
+print(m.tanh(1)) 
+print() 
+#8.other usefull function 
+print(m.isqrt(26)) 
+print(m.perm(5,2)) 
+print(m.comb(5,2)) 
+print(m.fmod(10.5,3)) 
+print(m.remainder(10,3)) 
+print(m.copysign(3,-1))
