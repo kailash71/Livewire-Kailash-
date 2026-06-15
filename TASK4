@@ -1,0 +1,85 @@
+#1.spy no: 
+A=int(input(“Enter a number:”)) 
+T=a 
+Sums=0 
+Product=1 
+While t>0: 
+D=t%10 
+Sums+=d 
+Product*=d 
+t//=10 
+if sums==product: 
+print(“spy number”) 
+else: 
+print(“not a spy number”)””” 
+“””#2.hassed no: 
+A=int(input(“enter a no:”)) 
+T=a 
+Sums=0 
+While t>0: 
+Sums+=b 
+If b%a==0: 
+Print(“hassed no”) 
+Else: 
+Print(“not a hassed no”)”””’’’this condition is just a try and this is not correct’’’ 
+‘’’#2.harshad no: 
+A=int(input(“enter a no:”)) 
+C=a%10 
+D=a//10 
+X=c+d 
+If a%x==0: 
+Print(“it is a harshad no”) 
+Else: 
+Print(“it is not a harshad no”)’’’ 
+‘’’#3.ARMSTRONG NO: 
+#disclaimer(this is done with my knowledge and applicable only for three digit no) 
+A=int(input(“enter a no:”)) 
+B=a//10 
+V1=a//100 
+V2=a%10 
+V3=b%10 
+X1=v1**3 
+X2=v2**3 
+X3=v3**3 
+Y=x1+x2+x3 
+If a==y: 
+Print(“armstrong no”) 
+Else: 
+Print(“not ma armstrong no”)’’’ 
+‘’’#4.paindrome(string): 
+A=(input(“enter a name:”)) 
+B=a[::-1] 
+If a==b: 
+Print(“it is a palindrome”) 
+Else: 
+Print(“it is not a palindrome”)’’’ 
+‘’’#5.fibonacci no: 
+#DISCLAIMER(THIS IS UPTO MY KNOWLEDGE )I DON’T KNOW This is CORRECT WAY 
+N=int(input(“enter a no:”)) 
+For I in range(1): 
+Print(n,”+”,1,”=”,n+1) 
+For j in range(1): 
+Print(n+1,”+”,1,”=”,(n+1)+1) 
+For k in range(1): 
+Print((n+1)+1,”+”,1,”=”,((n+1)+1)+1)
+‘’’#6.PRIME NO. 
+A=int(input(“enter a no:”)) 
+If a/a and a/1: 
+Print(“it is a prime no”) 
+Else: 
+Print(“it is not a prime no”)
+‘’’#7.BUZZ NO: 
+A=int(input(“enter a number:”)) 
+If a%7==0 or a%10==7: 
+Print(“it is a buzz no”) 
+Else: 
+Print(“it is not a buzz no”)’’’ 
+#8. Automorphic no: 
+‘’’ 
+A=int(input(“enter a no:”)) 
+B=a**2 
+C=b%10 
+If a==c: 
+Print(“it is a automorphic no”) 
+Else: 
+Print(“it is not a automorphic no”)
