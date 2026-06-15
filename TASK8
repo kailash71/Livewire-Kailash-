@@ -1,0 +1,95 @@
+#1.Print all even numbers from 1 to 50 (no arguments) 
+def print_even(): 
+for i in range(1, 51): 
+if i % 2 == 0: 
+print(i) 
+print_even() 
+#2. Function to print sum of two numbers 
+def add(a, b): 
+print("Sum =", a + b) 
+add(10, 20) 
+#3. Return multiple values (sum, average, min, max) from a list 
+def list_details(lst): 
+total = sum(lst) 
+avg = total / len(lst) 
+return total, avg, min(lst), max(lst) 
+numbers = [10, 20, 30, 40] 
+s, a, mn, mx = list_details(numbers) 
+print("Sum:", s, "Average:", a, "Min:", mn, "Max:", mx) 
+#4. Largest of three numbers using return 
+def largest(a, b, c): 
+return max(a, b, c) 
+print("Largest:", largest(10, 25, 15)) 
+#5. Positional and keyword arguments together 
+def student_details(name, roll, course="Python"): 
+print("Name:", name) 
+print("Roll No:", roll) 
+print("Course:", course) 
+student_details("Arun", 101, course="AI") 
+#6. Area of a rectangle (positional arguments) 
+def area_rectangle(length, breadth): 
+return length * breadth 
+print("Area:", area_rectangle(10, 5)) 
+#7. Simple Interest (default rate = 5%) 
+def simple_interest(p, t, r=5): 
+return (p * t * r) / 100 
+print("SI:", simple_interest(1000, 2)) 
+#8. Power of a number (default exponent = 2) 
+def power(num, exp=2): 
+return num ** exp 
+print(power(5)) 
+print(power(5, 3)) 
+#9. Sum of any number of values using *args 
+def sum_values(*args): 
+return sum(args) 
+print(sum_values(10, 20, 30)) 
+#10. Largest value using *args 
+def largest_value(*args): 
+return max(args) 
+print(largest_value(5, 12, 7, 25)) 
+#11. Display all key-value pairs using **kwargs 
+def show_details(**kwargs): 
+for key, value in kwargs.items(): 
+print(key, ":", value) 
+show_details(name="Ravi", age=20, city="Chennai") 
+#12. Display employee details using **kwargs 
+def employee_details(**kwargs): 
+for key, value in kwargs.items(): 
+print(key, ":", value) 
+employee_details(id=101, name="Anita", salary=30000) 
+#13. Lambda to find square 
+square = lambda x: x * x 
+print(square(6)) 
+#14. Lambda to find larger of two numbers 
+larger = lambda a, b: a if a > b else b 
+print(larger(10, 25)) 
+#15. Convert Celsius to Fahrenheit using map() 
+celsius = [0, 20, 30, 40] 
+fahrenheit = list(map(lambda c: (c * 9/5) + 32, celsius)) 
+print(fahrenheit) 
+#16. Squares of list elements using map() 
+nums = [1, 2, 3, 4] 
+squares = list(map(lambda x: x**2, nums)) 
+print(squares) 
+#17. Extract even numbers using filter() 
+nums = [1, 2, 3, 4, 5, 6] 
+even_nums = list(filter(lambda x: x % 2 == 0, nums)) 
+print(even_nums) 
+#18. Extract numbers greater than 100 using filter() 
+nums = [50, 120, 80, 200, 30] 
+greater = list(filter(lambda x: x > 100, nums)) 
+print(greater) 
+#19. Recursive function to calculate power 
+def power(base, exp): 
+if exp == 0: 
+return 1 
+return base * power(base, exp - 1) 
+print(power(2, 5)) 
+#20. Recursive Fibonacci series up to N terms 
+def fibonacci(n): 
+if n <= 1: 
+return n 
+return fibonacci(n-1) + fibonacci(n-2) 
+n = 7 
+for i in range(n): 
+print(fibonacci(i), end=" ")
