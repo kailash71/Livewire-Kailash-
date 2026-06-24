@@ -1,0 +1,46 @@
+# Student Management System
+
+students = []
+
+while True:
+    print("\n1. Add Student")
+    print("2. View Students")
+    print("3. Search Student")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        name = input("Enter student name: ")
+        mark = int(input("Enter student mark: "))
+        students.append([name, mark])
+        print("Student added successfully!")
+
+    elif choice == "2":
+        if len(students) == 0:
+            print("No students found.")
+        else:
+            print("\nStudent Records:")
+            for student in students:
+                print("Name:", student[0], "Mark:", student[1])
+
+    elif choice == "3":
+        search = input("Enter name to search: ")
+        found = False
+
+        for student in students:
+            if student[0] == search:
+                print("Name:", student[0])
+                print("Mark:", student[1])
+                found = True
+                break
+
+        if not found:
+            print("Student not found.")
+
+    elif choice == "4":
+        print("Program Ended.")
+        break
+
+    else:
+        print("Invalid Choice!")
