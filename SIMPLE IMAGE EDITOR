@@ -1,0 +1,261 @@
+import tkinter as tk
+from tkinter import filedialog
+from PIL import Image, ImageTk,ImageFilter
+from PIL import ImageEnhance
+import os
+from tkinter import messagebox
+from PIL import ImageOps
+
+class ImageEditor:
+    def __init__(self, root):
+        self.undo_stack = []
+        self.redo_stack = []
+        self.root = root
+        self.root.title("Simple Image Editor")
+        self.root.geometry("900x700")
+
+
+        self.image = None
+        self.display_image = None
+        self.file_path = None
+
+
+        self.canvas = tk.Canvas(root, bg="black")
+        self.canvas.pack(fill=tk.BOTH,expand=True)
+
+
+
+        toolbar = tk.Frame(root)
+        toolbar.pack(fill=tk.X)
+
+
+        tk.Button(toolbar, text="Open", command=self.open_image).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Save", command=self.save_image).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Rotate 90°", command=self.rotate).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Flip H", command=self.flip_horizontal).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Flip V", command=self.flip_vertical).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Border", command=self.add_border).pack(side=tk.LEFT)
+
+        tk.Button(toolbar, text="Blur", command=self.blur).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Grayscale", command=self.grayscale).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Contrast", command=self.contrast).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Brighten", command=self.brighten).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Sharpen", command=self.sharpen).pack(side=tk.LEFT)
+
+
+        tk.Button(toolbar, text="Negative", command=self.negative).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Emboss", command=self.emboss).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Smooth", command=self.smooth).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Border", command=self.add_border).pack(side=tk.LEFT)
+        
+        tk.Button(toolbar, text="Contour", command=self.contour).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Sepia", command=self.sepia).pack(side=tk.LEFT)
+        tk.Button(toolbar, text="Vintage", command=self.vintage).pack(side=tk.LEFT)
+
+        tk.Button(toolbar, text="Image Info", command=self.image_info).pack(side=tk.LEFT)
+
+    def open_image(self):
+        file_path = filedialog.askopenfilename(
+            filetypes=[("Images", "*.png *.jpg *.jpeg *.bmp *.gif")]
+        )
+        if file_path:
+            self.file_path = file_path
+            self.image = Image.open(file_path)
+            self.show_image()
+
+    def show_image(self):
+        if self.image:
+            img = self.image.copy().convert("RGBA")
+            #img = self.image.copy()
+
+            canvas_width = self.canvas.winfo_width()
+            canvas_height = self.canvas.winfo_height()
+
+            if canvas_width > 1 and canvas_height > 1:
+
+             img.thumbnail((canvas_width, canvas_height))
+
+            self.display_image = ImageTk.PhotoImage(img)
+            self.canvas.delete("all")
+            self.canvas.create_image(
+                canvas_width // 2,
+                canvas_height // 2,
+                image=self.display_image,
+
+            )
+
+    def save_image(self):
+        if self.image:
+            file_path = filedialog.asksaveasfilename(
+                defaultextension=".png",
+                filetypes=[
+                    ("PNG", "*.png"),
+                    ("JPEG", "*.jpg"),
+                    ("BMP", "*.bmp"),
+                ],
+            )
+            if file_path:
+                self.image.save(file_path)
+
+    def rotate(self):
+        if self.image:
+            self.image = self.image.rotate(-90, expand=True)
+            self.show_image()
+
+    def flip_horizontal(self):
+        if self.image:
+            self.image = self.image.transpose(Image.FLIP_LEFT_RIGHT)
+            self.show_image()
+
+    def flip_vertical(self):
+
+
+        if self.image:
+            w, h = self.image.size
+            self.image = self.image.transpose(Image.FLIP_TOP_BOTTOM)
+            self.show_image()
+
+    def grayscale(self):
+        if self.image:
+            self.image = self.image.convert("L")
+            self.show_image()
+
+
+
+    def blur(self):
+            if self.image:
+                self.image = self.image.filter(ImageFilter.BLUR)
+                self.show_image()
+
+
+
+
+
+    def brighten(self):
+        if self.image:
+            enhancer = ImageEnhance.Brightness(self.image)
+            self.image = enhancer.enhance(1.5)
+            self.show_image()
+
+
+
+    def image_info(self):
+        if self.image:
+
+            file_name = os.path.basename(self.file_path)
+
+            width, height = self.image.size
+
+            image_format = self.image.format
+            if image_format is None:
+                image_format = "Unknown"
+
+            image_mode = self.image.mode
+
+            file_size = os.path.getsize(self.file_path) / (1024 * 1024)
+
+            extension = os.path.splitext(self.file_path)[1]
+
+            info = (
+                f"Image Name : {file_name}\n\n"
+                f"Width      : {width} pixels\n"
+                f"Height     : {height} pixels\n"
+                f"Format     : {image_format}\n"
+                f"Mode       : {image_mode}\n"
+                f"File Size  : {file_size:.2f} MB"
+                f"Extension : {extension}\n"
+
+            )
+
+            messagebox.showinfo("Image Information", info)
+
+    def contrast(self):
+        if self.image:
+            enhancer = ImageEnhance.Contrast(self.image)
+            self.image = enhancer.enhance(1.5)
+            self.show_image()
+
+    def negative(self):
+        if self.image:
+            self.image = ImageOps.invert(self.image.convert("RGB"))
+            self.show_image()
+
+    def emboss(self):
+        if self.image:
+            self.image = self.image.filter(ImageFilter.EMBOSS)
+            self.show_image()
+
+    def smooth(self):
+        if self.image:
+            self.image = self.image.filter(ImageFilter.SMOOTH)
+            self.show_image()
+
+
+    def sharpen(self):
+        if self.image:
+            self.image = self.image.filter(ImageFilter.SHARPEN)
+            self.show_image()
+
+
+
+    def add_border(self):
+        if self.image:
+            self.image = ImageOps.expand(
+                self.image,
+                border=20,
+                fill="black"
+            )
+            self.show_image()
+
+
+    def contour(self):
+        if self.image:
+            self.image = self.image.filter(ImageFilter.CONTOUR)
+            self.show_image()
+
+    def sepia(self):
+        if self.image:
+
+            img = self.image.convert("RGB")
+            width, height = img.size
+            pixels = img.load()
+
+            for x in range(width):
+                for y in range(height):
+                    r, g, b = pixels[x, y]
+
+                    tr = int(0.393 * r + 0.769 * g + 0.189 * b)
+                    tg = int(0.349 * r + 0.686 * g + 0.168 * b)
+                    tb = int(0.272 * r + 0.534 * g + 0.131 * b)
+
+                    pixels[x, y] = (
+                        min(255, tr),
+                        min(255, tg),
+                        min(255, tb)
+                    )
+
+            self.image = img
+            self.show_image()
+
+    def vintage(self):
+        if self.image:
+            img = self.image.convert("RGB")
+
+            enhancer = ImageEnhance.Color(img)
+            img = enhancer.enhance(0.7)
+
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.2)
+
+            self.image = img.filter(ImageFilter.SMOOTH)
+
+            self.show_image()
+
+
+
+root = tk.Tk()
+app = ImageEditor(root)
+
+
+
+root.mainloop()
